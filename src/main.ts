@@ -4,42 +4,35 @@ import './tube/tube.css';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 import { Cylindar } from './cylinder/cylinder';
 import { Circle } from './circle/circle';
 import { Tube } from './tube/tube';
 
 class App {
-  lenis: Lenis;
-  cylinder!: Cylindar;
+  smoother!: ScrollSmoother;
+  cylindar!: Cylindar;
   circle!: Circle;
   tube!: Tube;
 
   constructor() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    this.lenis = new Lenis();
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
     this.init();
     this.addEventListeners();
   }
 
   init(): void {
-    this.setupLenis();
+    this.setupScrollSmoother();
     this.initAllEffects();
   }
 
-  // optional
-  setupLenis(): void {
-    this.lenis.on('scroll', () => {
-      ScrollTrigger.update();
+  setupScrollSmoother(): void {
+    this.smoother = ScrollSmoother.create({
+      smooth: 1,
+      effects: true,
     });
-    gsap.ticker.add((time) => {
-      this.lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
   }
 
   initAllEffects(): void {

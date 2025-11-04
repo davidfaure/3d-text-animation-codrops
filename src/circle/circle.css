@@ -4,6 +4,12 @@
   position: relative;
 }
 
+.circle__wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .circle__text__wrapper__left {
   position: absolute;
   width: 100vw;

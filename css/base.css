@@ -8,12 +8,13 @@
   --color-text: #fff;
   --color-text-alt: rgba(255, 255, 255, 0.7);
   --color-bg: #000;
-  --color-link: #fff;
+  --color-link: #ffffff95;
   --color-link-hover: #fff;
   --page-padding: 1.5rem;
   --section-padding: 3.2rem;
-  font-family: "area-normal", sans-serif;
+  font-family: 'area-normal', sans-serif;
   font-size: 12px;
+  line-height: 1;
 }
 
 body {
@@ -22,30 +23,32 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: calc(100vw / 1920 * 10);
   width: 100%;
   overflow-x: hidden;
   overscroll-behavior: none;
   height: 100%;
-  word-break: break-all;
-
-  @media screen and (max-width: 768px) {
-    font-size: calc(100vw / 375 * 10);
-  }
 }
 
 .demo-1 {
-  --color-bg: #d04607;
+  --color-bg: #4b45af;
+}
+
+.demo-2 {
+  --color-text: #c21010;
+}
+
+.demo-3 {
+  --color-bg: #151212;
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--color-link);
   outline: none;
   cursor: pointer;
 
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--color-link-hover);
   }
 
@@ -76,11 +79,11 @@ a {
   justify-content: start;
   grid-template-columns: auto auto auto;
   grid-template-areas:
-    "title title title"
-    "back archive github"
-    "demos demos demos"
-    "tags tags tags"
-    "sponsor sponsor sponsor";
+    'title title title'
+    'back archive github'
+    'demos demos demos'
+    'tags tags tags'
+    'sponsor sponsor sponsor';
 
   #cdawrap {
     justify-self: start;
@@ -144,8 +147,8 @@ a {
     grid-template-rows: auto auto;
     align-content: space-between;
     grid-template-areas:
-      "title back github archive demos"
-      "tags tags tags sponsor sponsor";
+      'title back github archive demos'
+      'tags tags tags sponsor sponsor';
 
     .frame__tags {
       align-self: end;
@@ -155,12 +158,14 @@ a {
     #cdawrap {
       justify-self: end;
       text-align: right;
-      max-width: 300px;
+      max-width: 225px;
+      line-height: 1.4;
     }
   }
 }
 
 .content {
+  word-break: break-all;
   padding: 0;
   max-width: 90em;
   margin: 0 auto;
@@ -192,6 +197,7 @@ a {
     text-align: center;
     word-break: break-word;
     font-weight: 600;
+    line-height: 1;
   }
 
   & p {
@@ -200,137 +206,4 @@ a {
     font-weight: 400;
     color: var(--color-text-alt);
   }
-}
-
-/* RESET */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul,
-li {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
